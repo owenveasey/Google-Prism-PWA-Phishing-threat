@@ -1,0 +1,4 @@
+#event_simpleName=ProcessRollup2
+| FileName=/(chrome|msedge)\.exe/i 
+| CommandLine=/--app=https?:\/\/[^\s]*google-prism/i 
+| table([@timestamp, ComputerName, UserName, CommandLine, ParentBaseFileName])
