@@ -1,0 +1,6 @@
+#event_simpleName=NewExecutableWritten
+| FilePath=/\\(Chrome|Edge) Apps\\/i
+| FileName=/.*\.lnk$/i
+// Filter out common noise like Zoom or Gmail
+| not(FileName=/(zoom|gmail|google|claude|outlook|teams)/i)
+| table([@timestamp, ComputerName, UserName, FileName, FilePath])
